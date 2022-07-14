@@ -1,5 +1,5 @@
 const express = require('express');
-
+const morgan=require('morgan');
 // initi
 
 const app= express();
@@ -9,7 +9,7 @@ const app= express();
 app.set('port', process.env.PORT || 4000);
 
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 // global variables 
 
@@ -20,5 +20,5 @@ app.use(morgan('dev'));
 //Starting the server 
 
 app.listen(app.get('port'),()  => {
-    console.log('Server on port' + app.get('port'))
+    console.log('Server on port', app.get('port'));
 } );
